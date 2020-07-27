@@ -27,7 +27,7 @@
 
 			<ul class="right-menu">
 				<li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-				<li><a href="#"><i class="fa fa-user-circle"></i></a></li>
+				<li><a href=""><i class="fa fa-user-circle"></i></a></li>
 			</ul>
 
 			<div class="menu-btn">
@@ -54,7 +54,7 @@
 			<p class="form-text">
 			Already have account?</p>
 			<p class="group-link">
-				<a href="#">Login</a>
+				<a href="login.php">Login</a>
 			</p>
 		</div>
 	</section>

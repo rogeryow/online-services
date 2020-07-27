@@ -39,10 +39,41 @@
 	<!-- Service Detail -->
 	<section class="section-detail">
 		<div class="section-detail-inner">
-			<div class="detail-image"></div>
+			<!--  -->
+			<?php  
+				include('../php/connect.php');
+				if(isset($_GET['id'])) {
+					$sql = "SELECT * FROM `tblservices` WHERE IDServices = " . $_GET['id'];
+
+					$result = $conn->query($sql);
+
+					if ($result->num_rows > 0) {
+						$row = $result->fetch_assoc();
+					}
+				}
+			?>
+
+			<?php 
+				// insert
+				if($_SERVER["REQUEST_METHOD"] == "POST") {
+					if(isset($_SESSION['user_id'])) {
+						$sql = "INSERT INTO `tblrequestservices` (`ID`, `user_id`, `service_id`) VALUES (NULL, '" . $_SESSION['user_id'] . "', '" . $_GET['id'] . "')";
+						if ($conn->query($sql) === TRUE) {
+							header("location: profile.php");
+						} else {
+							echo "Error: " . $sql . "<br>" . $conn->error;
+						}
+
+						$conn->close();
+					}
+				}
+			?>
+			<div class="detail-image"
+				style="background-image: url('../assets/images/services/<?php echo $row['Services_Img']; ?>')"
+			></div>
 			<div class="detail-info">
 				<div>
-					<h2>Head Massage</h2>	
+					<h2><?php echo $row['Services_Title']; ?></h2>	
 					<div class="ratings">
 						<div>
 							<div class="stars-div">
@@ -55,15 +86,17 @@
 								</label>
 								<span class="star-detail">(374)</span>
 							</div>
-							<p class="price">₱150</p>
-							<p class="category-detail">A scalp massage is a head massage designed to relax the mind and encourage circulation. Many times, tension is felt within the head and neck, so scalp massages can be very effective as a stress reducer. Warm oil is massaged throughout the scalp, working to relax tight muscles in the temple and neck regions</p>
+							<p class="price">₱<?php echo $row["price"]; ?></p>
+							<p class="category-detail"><?php echo $row["Services_Desc"]; ?></p>
 							<span class="open"><b>Open</b> ⋅ 8:am - 5pm</span>
-							<p><b>Address:</b> Suizo Building, Ramon Magsaysay St, Digos City, 8002 Davao del Sur</p>
+							<p><b>Address:</b> <?php echo $row["address"]; ?></p>
 						</div>
 					</div>
 				</div>
 				<div>
-					<button class="btn-order">Place Order</button>
+					<form method="post">
+						<input type="submit" class="btn-order" value="Place Order">
+					</form>
 				</div>
 			</div>
 		</div>

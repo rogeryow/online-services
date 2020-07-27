@@ -11,7 +11,14 @@
 	<!-- nav -->
 	<nav class="main-nav">
 		<div class="main-nav-inner">
-			<!-- <img src="assets/img/logo/logo.png" alt="Online Services" class="logo"> -->
+			<?php 
+				include('../php/connect.php');
+				$link = 'login.php';
+
+				if(isset($_SESSION['user_id'])) {
+					$link = 'profile.php';
+				}
+			?>
 			<a href="index.php">
 				<label class="logo"><i class="fa fa-bicycle"></i> Services on the Go</label>
 			</a>
@@ -24,7 +31,7 @@
 
 			<ul class="right-menu">
 				<li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-				<li><a href="#"><i class="fa fa-user-circle"></i></a></li>
+				<li><a href="<?php echo $link ?>"><i class="fa fa-user-circle"></i></a></li>
 			</ul>
 
 			<div class="menu-btn">
@@ -156,8 +163,8 @@
 				</div>
 				<div class="category-body">
 				<ul>
-					<li><a href="#">Manicure and Pedicure</a></li>
-					<li><a href="#">Massage</a></li>
+					<li><a href="browse.php?c=Body-and-Health&s=Manicure-and-Pedicure-Services&category=35&sub=6">Manicure and Pedicure</a></li>
+					<li><a href="browse.php?c=Body-and-Health&s=Massage-Services&category=35&sub=5">Massage</a></li>
 				</ul>
 <!-- 					<a class="btn-view" href="">
 						<span>View all</span>

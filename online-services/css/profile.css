@@ -1,0 +1,25 @@
+body {
+	background: #f5f5f5;
+}
+
+.section-profile {
+	background-color: #fff;
+	max-width: 1200px;
+	margin: 100px auto 30px;
+	box-sizing: border-box;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: 350px 1fr;
+	border-radius: 5px;
+}
+
+.section-profile table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.section-profile th, td {
+	text-align: left;
+	padding: 20px 20px;
+	border: 1px solid #f5f5f5;
+}

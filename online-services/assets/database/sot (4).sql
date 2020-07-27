@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 27, 2020 at 10:08 AM
+-- Generation Time: Jul 27, 2020 at 03:45 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -149,7 +149,7 @@ INSERT INTO `tblclient` (`ID`, `First_Name`, `Last_Name`, `Username`, `Password`
 (11, 'Jephunneh', 'Arobo', 'epoy05', 'siyalangpo', 'siyalangpo', '09203354765', 'Tres de Mayo, Digos City', 'Male', 'pic1.jpeg'),
 (12, 'James', 'Traya', 'james05', 'james05', 'james05', '09203354656', 'Tienda Aplaya, Digos City', 'Male', 'pic2.jpg'),
 (13, 'Vincent', 'Alagao', 'vincent05', 'vincent05', 'vincent05', '09203343223', 'Don Lorenzo, Digos City', 'Male', 'pic3.jpg'),
-(14, 'd', 'sds', 'corona', 'user', 'wwwwwwwwww', '444', 's', 'Female', 'pic4.jpg');
+(14, 'd', 'sds', 'corona', 'user', 'wwwwwwwwww', '444', 'Don Lorenzo, Digos City', 'Female', 'pic4.jpg');
 
 -- --------------------------------------------------------
 
@@ -206,6 +206,8 @@ INSERT INTO `tblgallery` (`id`, `service_id`, `img`) VALUES
 
 CREATE TABLE `tblrequestservices` (
   `ID` int(11) NOT NULL,
+  `user_id` varchar(11) NOT NULL,
+  `service_id` varchar(255) NOT NULL,
   `Username` text NOT NULL,
   `Fullname` varchar(50) NOT NULL,
   `Complete_Add` varchar(50) NOT NULL,
@@ -224,8 +226,16 @@ CREATE TABLE `tblrequestservices` (
 -- Dumping data for table `tblrequestservices`
 --
 
-INSERT INTO `tblrequestservices` (`ID`, `Username`, `Fullname`, `Complete_Add`, `Phone_No`, `Services_Pic`, `Services_Name`, `Services_Type`, `Services_Price`, `SP_Name`, `SP_Username`, `Date`, `Status`) VALUES
-(77, 'james05', 'James Traya', 'Tienda Aplaya, Digos City', '09203354656', 'sd.5e27f4c0115613.74784297.jpg', 'Repairing Computer', 'Other', 200, '', 'epoy05', '2020-01-24 09:49:07', 1);
+INSERT INTO `tblrequestservices` (`ID`, `user_id`, `service_id`, `Username`, `Fullname`, `Complete_Add`, `Phone_No`, `Services_Pic`, `Services_Name`, `Services_Type`, `Services_Price`, `SP_Name`, `SP_Username`, `Date`, `Status`) VALUES
+(77, '', '', 'james05', 'James Traya', 'Tienda Aplaya, Digos City', '09203354656', 'sd.5e27f4c0115613.74784297.jpg', 'Repairing Computer', 'Other', 200, '', 'epoy05', '2020-01-24 09:49:07', 1),
+(81, '11', '137', '', '', '', '', '', '', '', 0, '', '', '0000-00-00 00:00:00', 0),
+(83, '14', '139', '', '', '', '', '', '', '', 0, '', '', '0000-00-00 00:00:00', 0),
+(84, '14', '136', '', '', '', '', '', '', '', 0, '', '', '0000-00-00 00:00:00', 0),
+(85, '14', '137', '', '', '', '', '', '', '', 0, '', '', '0000-00-00 00:00:00', 0),
+(86, '14', '136', '', '', '', '', '', '', '', 0, '', '', '0000-00-00 00:00:00', 0),
+(87, '14', '137', '', '', '', '', '', '', '', 0, '', '', '0000-00-00 00:00:00', 0),
+(88, '14', '139', '', '', '', '', '', '', '', 0, '', '', '0000-00-00 00:00:00', 0),
+(89, '14', '137', '', '', '', '', '', '', '', 0, '', '', '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -267,24 +277,25 @@ CREATE TABLE `tblservices` (
   `subcategory` varchar(255) NOT NULL,
   `latitude` varchar(255) NOT NULL,
   `longtitude` varchar(255) NOT NULL,
-  `price` int(11) NOT NULL
+  `price` int(11) NOT NULL,
+  `address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tblservices`
 --
 
-INSERT INTO `tblservices` (`IDServices`, `Username`, `Company_Name`, `Services_Title`, `Services_Desc`, `Services_Img`, `category`, `subcategory`, `latitude`, `longtitude`, `price`) VALUES
-(130, 'james05', '', 'Roof Repair', 'Other', 'computer.jpg', '45', '4', '', '', 0),
-(132, 'epoy05', '', 'Full Body Massage', 'A full-body massage usually includes your arms, legs, hands and feet, your neck and back, your stomach and buttocks. The area around the breasts is usually massaged but not the breasts themselves.', 'massage.jpg', '35', '5', '6.746537', '125.357481', 300),
-(134, 'epoy05', '', 'Half Body Massage', 'Full body massage means head to toe including everything. Not only private parts but a full body massage includes your hair, head, eyes, ears, and chin. Although it''s a total body massage from top to bottom still you will be kicked out of the massage room before time.', 'half-body-massage.jpg', '35', '5', '', '', 150),
-(135, 'epoy05', '', 'Networking ', 'Computer', 'programming.jpg', '33', '6', '', '', 0),
-(136, 'epoy05', '', 'pedicure', 'Regular pedicure: A simple treatment that includes foot soaking, foot scrubbing with a pumice stone or foot file, nail clipping, nail shaping, foot and calf massage, moisturizer and nail polishing. ... The feet are covered with layers of paraffin wax to moisturize feet.', 'pedicure.jpg', '35', '6', '', '', 100),
-(137, 'epoy05', '', 'manicure', 'A good manicure can: clean, shape, strengthen, paint and decorate your nails. attend to any skin problems you might have around the nail, such as broken or sore skin. use acupressure or hand-massage techniques to stimulate the blood and lymph flow to improve the health of your skin', 'manicure.jpg', '35', '6', '', '', 80),
-(138, 'epoy05', '', 'Create Programs', 'Other', 'editing.jpg', '33', '6', '', '', 0),
-(139, 'epoy05', '', 'Head Massage', 'A head massage may help relieve stress and reduce tension. It may also ease migraine or headache pain, lower blood pressure, improve circulation to your head and neck, and promote hair growth. Before using essential oils, make sure they''re diluted, and do a patch test before using on a large area of skin.', 'head-massage2.jpg', '35', '5', '', '', 100),
-(140, 'epoy05', '', 'House Cleaning', 'Home', 'cleaning.jpg', '34', '5', '', '', 0),
-(141, 'vincent05', '', 'House Cleaning', 'Home', 'cleaning.jpg', '34', '5', '', '', 0);
+INSERT INTO `tblservices` (`IDServices`, `Username`, `Company_Name`, `Services_Title`, `Services_Desc`, `Services_Img`, `category`, `subcategory`, `latitude`, `longtitude`, `price`, `address`) VALUES
+(130, 'james05', '', 'Roof Repair', 'Other', 'computer.jpg', '45', '4', '', '', 0, 'Suizo Building, Ramon Magsaysay St, Digos City, 8002 Davao del Sur'),
+(132, 'epoy05', '', 'Full Body Massage', 'A full-body massage usually includes your arms, legs, hands and feet, your neck and back, your stomach and buttocks. The area around the breasts is usually massaged but not the breasts themselves.', 'massage.jpg', '35', '5', '6.746537', '125.357481', 300, 'Suizo Building, Ramon Magsaysay St, Digos City, 8002 Davao del Sur'),
+(134, 'epoy05', '', 'Half Body Massage', 'Full body massage means head to toe including everything. Not only private parts but a full body massage includes your hair, head, eyes, ears, and chin. Although it''s a total body massage from top to bottom still you will be kicked out of the massage room before time.', 'half-body-massage.jpg', '35', '5', '', '', 150, 'Suizo Building, Ramon Magsaysay St, Digos City, 8002 Davao del Sur'),
+(135, 'epoy05', '', 'Networking ', 'Computer', 'programming.jpg', '33', '6', '', '', 0, ''),
+(136, 'epoy05', '', 'pedicure', 'Regular pedicure: A simple treatment that includes foot soaking, foot scrubbing with a pumice stone or foot file, nail clipping, nail shaping, foot and calf massage, moisturizer and nail polishing. ... The feet are covered with layers of paraffin wax to moisturize feet.', 'pedicure.jpg', '35', '6', '', '', 100, 'Suizo Building, Ramon Magsaysay St, Digos City, 8002 Davao del Sur'),
+(137, 'epoy05', '', 'manicure', 'A good manicure can: clean, shape, strengthen, paint and decorate your nails. attend to any skin problems you might have around the nail, such as broken or sore skin. use acupressure or hand-massage techniques to stimulate the blood and lymph flow to improve the health of your skin', 'manicure.jpg', '35', '6', '', '', 80, '0928 Cabrillos, Digos City, 8002 Davao del Sur'),
+(138, 'epoy05', '', 'Create Programs', 'Other', 'editing.jpg', '33', '6', '', '', 0, ''),
+(139, 'epoy05', '', 'Head Massage', 'A head massage may help relieve stress and reduce tension. It may also ease migraine or headache pain, lower blood pressure, improve circulation to your head and neck, and promote hair growth. Before using essential oils, make sure they''re diluted, and do a patch test before using on a large area of skin.', 'head-massage2.jpg', '35', '5', '', '', 100, '0928 Cabrillos, Digos City, 8002 Davao del Sur'),
+(140, 'epoy05', '', 'House Cleaning', 'Home', 'cleaning.jpg', '34', '5', '', '', 0, ''),
+(141, 'vincent05', '', 'House Cleaning', 'Home', 'cleaning.jpg', '34', '5', '', '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -350,6 +361,21 @@ CREATE TABLE `tbluploadimages` (
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `view_cart`
+--
+CREATE TABLE `view_cart` (
+`user_id` varchar(11)
+,`service_id` varchar(255)
+,`ID` int(11)
+,`Services_Title` longtext
+,`price` int(11)
+,`address` varchar(255)
+,`Status` int(11)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Stand-in structure for view `vw_reviews`
 --
 CREATE TABLE `vw_reviews` (
@@ -388,6 +414,15 @@ CREATE TABLE `vw_storage` (
 ,`action` varchar(255)
 ,`img` longtext
 );
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `view_cart`
+--
+DROP TABLE IF EXISTS `view_cart`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_cart`  AS  select `tblrequestservices`.`user_id` AS `user_id`,`tblrequestservices`.`service_id` AS `service_id`,`tblrequestservices`.`ID` AS `ID`,`tblservices`.`Services_Title` AS `Services_Title`,`tblservices`.`price` AS `price`,`tblservices`.`address` AS `address`,`tblrequestservices`.`Status` AS `Status` from (`tblrequestservices` join `tblservices` on((`tblrequestservices`.`service_id` = `tblservices`.`IDServices`))) ;
 
 -- --------------------------------------------------------
 
@@ -541,7 +576,7 @@ ALTER TABLE `tblgallery`
 -- AUTO_INCREMENT for table `tblrequestservices`
 --
 ALTER TABLE `tblrequestservices`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 --
 -- AUTO_INCREMENT for table `tblreviews`
 --
