@@ -14,7 +14,9 @@
 	<nav class="main-nav">
 		<div class="main-nav-inner">
 			<!-- <img src="assets/img/logo/logo.png" alt="Online Services" class="logo"> -->
-			<label class="logo"><i class="fa fa-bicycle"></i> Services on the Go</label>
+			<a href="index.php">
+				<label class="logo"><i class="fa fa-bicycle"></i> Services on the Go</label>
+			</a>
 
 			<ul class="main-menu">
 				<li><a href="#">Services</a></li>

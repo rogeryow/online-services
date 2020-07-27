@@ -9,15 +9,19 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
+	<?php 
+		include('../php/connect.php')
+	?>
 	<!-- nav -->
 	<nav class="main-nav">
 		<div class="main-nav-inner">
 			<!-- <img src="assets/img/logo/logo.png" alt="Online Services" class="logo"> -->
-			<label class="logo"><i class="fa fa-bicycle"></i> Services on the Go</label>
+			<a href="index.php">
+				<label class="logo"><i class="fa fa-bicycle"></i> Services on the Go</label>
+			</a>
 
 			<ul class="main-menu">
-				<li><a href="#">Services</a></li>
+				<li><a href="category.php">Services</a></li>
 				<li><a href="#">Contact us</a></li>
 				<li><a href="#">About</a></li>
 				<li><a href="#">Support</a></li>
@@ -39,62 +43,85 @@
 		
 	</div>
 
-	<!-- Category section -->
-	<section class="category-section">
-		<div class="category-section-inner">
-			<h1>Browse Services</h1>
-			<label class="category-crumb">Services / Categories</label>
-			<p class="category-info">Our firm provides a wide range of services to our individual and business clients. Being a relatively small firm, we are able to give our clients personalized quality service. Below, we have listed the services that we offer to our clients along with a brief description.</p>
-			<div class="category-body">
-				<div class="category-item">
-					<div class="category-image"></div>
-					<dir class="category-text">
-						<div>
-							<h3>Cleaning Services</h3>
-							<p class="category-detail">Hire our house cleaning experts for a qualirt cleaning service</p>
-						</div>
-						<a href="">Request now <i class="fa fa-arrow-right"></i></a>
-					</dir>
+	<!-- Service Category -->
+	<section class="service-category">
+			<div>
+				<h2>Browse Services</h2>
+				<label class="category-crumb">Services / Categories</label>
+			</div>
+		<div class="service-category-inner">
+			<div class="service-category-item">
+				<div class="category-image">
+					<label>Home</label>
 				</div>
-				<div class="category-item">
-					<div class="category-image"></div>
-					<dir class="category-text">
-						<div>
-							<h3>Cleaning Services</h3>
-							<p class="category-detail">Hire our house cleaning experts for a qualirt cleaning service</p>
-						</div>
-						<a href="">Request now <i class="fa fa-arrow-right"></i></a>
-					</dir>
+				<div class="category-body">
+				<ul>
+					<li><a href="browse.php?c=Home&s=Pest-Control-Services">Pest Control Services</a></li>
+					<li><a href="browse.php?c=home&s=House-Cleaning-Services">House Cleaning Services</a></li>
+					<li><a href="browse.php?c=Home&s=Plumbing-Services">Plumbing Services</a></li>
+					<li><a href="browse.php?c=Home&s=Electrical-Services">Electrical Services</a></li>
+					<li><a href="browse.php?c=Home&s=Aircon-Services">Aircon Services</a></li>
+				</ul>
+<!-- 					<a class="btn-view" href="">
+						<span>View all</span>
+					</a> -->
 				</div>
-				<div class="category-item">
-					<div class="category-image"></div>
-					<dir class="category-text">
-						<div>
-							<h3>Cleaning Services</h3>
-							<p class="category-detail">Get your office cleaned by our professional and experienced cleaning companies</p>
-						</div>
-						<a href="">Request now <i class="fa fa-arrow-right"></i></a>
-					</dir>
+			</div>
+			<div class="service-category-item">
+				<div class="category-image">
+					<label>Events</label>
 				</div>
-				<div class="category-item">
-					<div class="category-image"></div>
-					<dir class="category-text">
-						<div>
-							<h3>Cleaning Services</h3>
-							<p class="category-detail">Hire our house cleaning experts for a qualirt cleaning service</p>
-						</div>
-						<a href="">Request now <i class="fa fa-arrow-right"></i></a>
-					</dir>
+				<div class="category-body">
+				<ul>
+					<li><a href="browse.php?c=Events&s=Catering-Services">Catering Services</a></li>
+					<li><a href="browse.php?c=Events&s=Birthday-Decoration-Services">Birthday Decoration Services</a></li>
+				</ul>
+<!-- 					<a class="btn-view" href="">
+						<span>View all</span>
+					</a> -->
 				</div>
-				<div class="category-item">
-					<div class="category-image"></div>
-					<dir class="category-text">
-						<div>
-							<h3>Cleaning Services</h3>
-							<p class="category-detail">Hire our house cleaning experts for a qualirt cleaning service</p>
-						</div>
-						<a href="">Request now <i class="fa fa-arrow-right"></i> </a>
-					</dir>
+			</div>
+			<div class="service-category-item">
+				<div class="category-image">
+					<label>Body and Health</label>
+				</div>
+				<div class="category-body">
+				<ul>
+					<li><a href="browse.php?c=Body-and-Health&s=Manicure-and-Pedicure-Services&category=35&sub=6">Manicure and Pedicure Services</a></li>
+					<li><a href="browse.php?c=Body-and-Health&s=Massage-Services&category=35&sub=5">Massage Services</a></li>
+				</ul>
+<!-- 					<a class="btn-view" href="">
+						<span>View all</span>
+					</a> -->
+				</div>
+			</div>
+			<div class="service-category-item">
+				<div class="category-image">
+					<label>Rental</label>
+				</div>
+				<div class="category-body">
+				<ul>
+					<li><a href="browse.php?c=Rental&s=Tables-and-Affairs-Rental">Tables & Affairs Rental Services</a></li>
+					<li><a href="browse.php?c=Rental&s=Car-Rental-Servicse">Car Rental Services</a></li>
+				</ul>
+<!-- 					<a class="btn-view" href="">
+						<span>View all</span>
+					</a> -->
+				</div>
+			</div>
+			<div class="service-category-item">
+				<div class="category-image">
+					<label>Delivery</label>
+				</div>
+				<div class="category-body">
+				<ul>
+					<li><a href="browse.php?c=Delivery&s=Grocery-and-Shopping-Services">Grocery & Shopping Services</a></li>
+					<li><a href="browse.php?c=Delivery&s=Food-Deliver Services">Food Delivery Services</a></li>
+
+				</ul>
+<!-- 					<a class="btn-view" href="">
+						<span>View More</span>
+					</a> -->
 				</div>
 			</div>
 		</div>
@@ -103,7 +130,7 @@
 	<!-- How it works -->
 	<div class="section-devider">
 		<i class="fa fa"></i>
-		<h2 class="sec-title">How It Works</h2>
+		<h2 class="sec-title">How we operate</h2>
 	</div>
 
 	<section class="how-to">
@@ -134,7 +161,7 @@
 	<footer class="footer">
 		<div class="footer-inner">
 			<div>
-				<label class="logo"><i class="fa fa-bicycle"></i> Services on the Go &copy; 2020 All rights reserved.</label>
+				<i class="fa fa-globe fa-2x"></i> English (United States)
 			</div>
 			<ul>
 				<li><a href="#">Sitemap</a></li>

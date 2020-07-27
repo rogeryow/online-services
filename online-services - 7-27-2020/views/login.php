@@ -14,9 +14,7 @@
 	<nav class="main-nav">
 		<div class="main-nav-inner">
 			<!-- <img src="assets/img/logo/logo.png" alt="Online Services" class="logo"> -->
-			<a href="index.php">
-				<label class="logo"><i class="fa fa-bicycle"></i> Services on the Go</label>
-			</a>
+			<label class="logo"><i class="fa fa-bicycle"></i> Services on the Go</label>
 
 			<ul class="main-menu">
 				<li><a href="#">Services</a></li>
@@ -38,23 +36,18 @@
 
 	<section class="login-section">
 		<div class="login-form">
-			<h2>Sign up</h2>
-			<label class="label">Name</label>
-			<input class="input" type="" name="" placeholder="Your name">
-			<label class="label">Address</label>
-			<input class="input" type="" name="" placeholder="Enter your address">
-			<label class="label">Phone number</label>
-			<input class="input" type="" name="" placeholder="Enter your phone number">
+			<h2>Login</h2>
+			<label class="label">Username</label>
+			<input class="input" type="" name="" placeholder="Username or Password">
 			<label class="label">Password</label>
-			<input class="input" type="" name="" placeholder="Enter your password">
-			<label class="label">Confirm Password</label>
-			<input class="input" type="" name="" placeholder="Enter again to confirm">
+			<input class="input" type="" name="" placeholder="Password">
 			<button class="btn-form btn-red">Login</button>
 			<hr class="divider">
-			<p class="form-text">
-			Already have account?</p>
+			<p class="form-text">Don't have an account? Sign up as</p>
 			<p class="group-link">
-				<a href="#">Login</a>
+				<a href="#">User</a>
+				or
+				<a href="#">Vendor</a>
 			</p>
 		</div>
 	</section>
@@ -63,7 +56,7 @@
 	<footer class="footer">
 		<div class="footer-inner">
 			<div>
-				<i class="fa fa-globe fa-2x"></i> English (United States)
+				<label class="logo"><i class="fa fa-bicycle"></i> Services on the Go &copy; 2020 All rights reserved.</label>
 			</div>
 			<ul>
 				<li><a href="#">Sitemap</a></li>

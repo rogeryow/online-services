@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<link rel="stylesheet" type="text/css" href="../css/form.css">
+	<link rel="stylesheet" type="text/css" href="../css/detail.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
 			</a>
 
 			<ul class="main-menu">
-				<li><a href="#">Services</a></li>
+				<li><a href="category.php">Services</a></li>
 				<li><a href="#">Contact us</a></li>
 				<li><a href="#">About</a></li>
 				<li><a href="#">Support</a></li>
@@ -36,26 +36,36 @@
 		</div>
 	</nav>
 
-	<section class="login-section">
-		<div class="login-form">
-			<h2>Sign up</h2>
-			<label class="label">Name</label>
-			<input class="input" type="" name="" placeholder="Your name">
-			<label class="label">Address</label>
-			<input class="input" type="" name="" placeholder="Enter your address">
-			<label class="label">Phone number</label>
-			<input class="input" type="" name="" placeholder="Enter your phone number">
-			<label class="label">Password</label>
-			<input class="input" type="" name="" placeholder="Enter your password">
-			<label class="label">Confirm Password</label>
-			<input class="input" type="" name="" placeholder="Enter again to confirm">
-			<button class="btn-form btn-red">Login</button>
-			<hr class="divider">
-			<p class="form-text">
-			Already have account?</p>
-			<p class="group-link">
-				<a href="#">Login</a>
-			</p>
+	<!-- Service Detail -->
+	<section class="section-detail">
+		<div class="section-detail-inner">
+			<div class="detail-image"></div>
+			<div class="detail-info">
+				<div>
+					<h2>Head Massage</h2>	
+					<div class="ratings">
+						<div>
+							<div class="stars-div">
+								<label class="stars">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</label>
+								<span class="star-detail">(374)</span>
+							</div>
+							<p class="price">₱150</p>
+							<p class="category-detail">A scalp massage is a head massage designed to relax the mind and encourage circulation. Many times, tension is felt within the head and neck, so scalp massages can be very effective as a stress reducer. Warm oil is massaged throughout the scalp, working to relax tight muscles in the temple and neck regions</p>
+							<span class="open"><b>Open</b> ⋅ 8:am - 5pm</span>
+							<p><b>Address:</b> Suizo Building, Ramon Magsaysay St, Digos City, 8002 Davao del Sur</p>
+						</div>
+					</div>
+				</div>
+				<div>
+					<button class="btn-order">Place Order</button>
+				</div>
+			</div>
 		</div>
 	</section>
 
